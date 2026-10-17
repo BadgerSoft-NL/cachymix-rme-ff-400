@@ -455,8 +455,10 @@ button {
 .meter-balk {
   position: absolute;
   inset: 0;
-  transform-origin: bottom;
-  transform: scaleY(0);
+  /* Het verloop staat vast over de hele baan; de stand knipt de bovenkant
+     weg. Met scaleY zou het verloop meekrimpen en altijd alle drie de
+     kleuren tonen. */
+  clip-path: inset(100% 0 0 0);
   /* -60..0 dBFS: groen tot -12, geel tot -3, dan rood */
   background: linear-gradient(
     to top,
@@ -467,7 +469,6 @@ button {
     var(--meter-hoog) 95%
   );
   background-size: 100% 100%;
-  will-change: transform;
 }
 
 .meter-piek {

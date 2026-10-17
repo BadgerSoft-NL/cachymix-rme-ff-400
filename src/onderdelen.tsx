@@ -129,7 +129,7 @@ export function Meter({ soort, kanalen }: { soort: MeterSoort; kanalen: number[]
         if (v >= 0.999) clipTot[i] = nu + 2000;
         if (Math.abs(getoond[i] - s) > 0.002) {
           const b = balken.current[i];
-          if (b) b.style.transform = `scaleY(${s})`;
+          if (b) b.style.clipPath = `inset(${(1 - s) * 100}% 0 0 0)`;
           getoond[i] = s;
         }
         const p = pieken.current[i];
