@@ -91,7 +91,7 @@ impl ksni::Tray for Icoon {
 
     fn tool_tip(&self) -> ToolTip {
         ToolTip {
-            title: "CachyMix".into(),
+            title: concat!("CachyMix ", env!("CARGO_PKG_VERSION")).into(),
             description: self.status.clone(),
             ..Default::default()
         }

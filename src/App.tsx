@@ -3,6 +3,7 @@ import { api, Configuratie, KANALEN, luister, Meters, PAREN, Toestand, Verbindin
 import { Instellingen } from "./Instellingen";
 import { PAARNAMEN, stuurMeters } from "./kanalen";
 import { BronStrip, UitgangStrip, Voorversterker } from "./strips";
+import { version } from "../package.json";
 
 const KLOKNAAM: Record<string, string> = {
   Intern: "Internal",
@@ -141,7 +142,7 @@ export default function App() {
     <div className="app">
       <header className="balk">
         <div className="merk">
-          CachyMix <span className="merk-sub">Fireface 400</span>
+          CachyMix <span className="merk-versie">{version}</span> <span className="merk-sub">Fireface 400</span>
         </div>
         <div className={"verbinding" + (verbinding.verbonden ? " aan" : "")}>
           <span className="punt" />

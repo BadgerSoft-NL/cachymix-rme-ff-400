@@ -71,6 +71,13 @@ button {
   letter-spacing: 0.02em;
 }
 
+.merk-versie {
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--zacht);
+  font-variant-numeric: tabular-nums;
+}
+
 .merk-sub {
   font-weight: 400;
   color: var(--zacht);
