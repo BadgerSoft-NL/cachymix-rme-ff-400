@@ -22,8 +22,10 @@ moet in groep `audio` zitten.
   herstart. Eerst quantum, dan rate, anders blijft de ALSA-periode hangen.
   Alleen 32/44,1/48 kHz: bij 88,2/96 heeft de FF400 14 kanalen, en het
   pro-audio-profiel leest er 18 uit bij 48 kHz.
-- `tray.rs` — icoon in Status and Notifications; venster sluiten = verbergen.
-  Op Linux komen er geen klikken op het icoon binnen, alles via het menu.
+- `tray.rs` — icoon in Status and Notifications via `ksni` (StatusNotifierItem
+  over D-Bus), niet via de tray van Tauri: die gaat over libayatana en kent
+  alleen een menu. Klik = venster tonen/verbergen, rechtsklik = menu.
+  Venster sluiten = verbergen.
 - `autostart.rs` — `~/.config/autostart/nl.jetse.cachymix.desktop` met
   `--hidden`. In een AppImage wijst hij naar `$APPIMAGE`, niet naar
   `current_exe`. Single-instance-plugin voorkomt twee schrijvers op de mixer.

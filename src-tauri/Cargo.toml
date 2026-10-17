@@ -15,7 +15,10 @@ crate-type = ["staticlib", "cdylib", "rlib"]
 tauri-build = { version = "2", features = [] }
 
 [dependencies]
-tauri = { version = "2", features = ["tray-icon", "image-png"] }
+tauri = { version = "2", features = ["image-png"] }
+# Het tray-icoon: StatusNotifierItem rechtstreeks over D-Bus, zodat een klik
+# de app opent en het menu op de rechterklik zit. Zie tray.rs.
+ksni = { version = "0.3", features = ["blocking"] }
 # Autostart en zelf opnieuw starten mogen geen tweede exemplaar geven: twee
 # apps die om beurten de mixer schrijven is erger dan geen.
 tauri-plugin-single-instance = "2"

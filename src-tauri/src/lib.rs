@@ -219,11 +219,8 @@ fn haal_autostart() -> bool {
 #[tauri::command]
 fn zet_autostart(app: tauri::AppHandle, aan: bool) -> Resultaat<bool> {
     autostart::zet(aan)?;
-    let nu = autostart::staat_aan();
-    if let Some(t) = app.try_state::<tray::Tray>() {
-        let _ = t.autostart.set_checked(nu);
-    }
-    Ok(nu)
+    tray::autostart_gewijzigd(&app);
+    Ok(autostart::staat_aan())
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
@@ -243,7 +240,7 @@ pub fn run() {
             }
         })
         .setup(|app| {
-            tray::maak(app.handle())?;
+            tray::maak(app.handle());
             autostart::werk_bij();
             // Met --hidden (zo start de autostart hem) blijft het venster dicht.
             if !std::env::args().any(|a| a == "--hidden") {

@@ -41,8 +41,9 @@ PipeWire, but it should work on any recent Linux distribution with the
   report its state back, so CachyMix keeps the state itself and sends it to
   the device whenever it appears (power on, replug, resume).
 - **Lives in the system tray** ("Status and Notifications" in KDE), like
-  TotalMix on Windows. Closing the window keeps it running. Optionally starts
-  at login, hidden, and connects as soon as the Fireface is switched on.
+  TotalMix on Windows. Click the icon to show or hide the window; right-click
+  for the menu. Closing the window keeps it running. Optionally starts at
+  login, hidden, and connects as soon as the Fireface is switched on.
 - **Channel names**: double-click any channel or output name to rename it.
 
 ## Requirements
@@ -73,7 +74,7 @@ there in the tray.
 ### Build from source
 
 You need Rust, Node.js and the Tauri prerequisites for Linux
-(`webkit2gtk-4.1`, `libayatana-appindicator`).
+(`webkit2gtk-4.1`).
 
 ```bash
 npm install
