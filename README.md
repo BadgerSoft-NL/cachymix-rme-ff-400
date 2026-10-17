@@ -100,7 +100,7 @@ only the UI in a browser, against a simulated device.
   restart; setting both back to *Auto* removes that file.
 - **88.2 / 96 kHz is not supported yet.** At double speed the FF400 has 14
   channels instead of 18, and PipeWire's pro-audio profile assumes 18.
-- State is stored in `~/.config/nl.jetse.cachymix/toestand.json`.
+- State is stored in `toestand.json` in the app's folder under `~/.config/`.
 
 ## How it works
 
