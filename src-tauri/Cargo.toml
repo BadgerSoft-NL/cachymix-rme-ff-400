@@ -1,0 +1,26 @@
+[package]
+name = "cachymix"
+version = "0.1.0"
+description = "Mixer voor de RME Fireface 400 onder Linux"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/BadgerSoft-NL/cachymix-rme-ff-400"
+authors = ["Jetse"]
+edition = "2021"
+
+[lib]
+name = "cachymix_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "image-png"] }
+# Autostart en zelf opnieuw starten mogen geen tweede exemplaar geven: twee
+# apps die om beurten de mixer schrijven is erger dan geen.
+tauri-plugin-single-instance = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# Voor de ioctls op /dev/fwN en het lezen van de hwdep-node: meer is er niet
+# nodig om met de Fireface te praten, geen ffado en geen hinawa.
+libc = "0.2"
