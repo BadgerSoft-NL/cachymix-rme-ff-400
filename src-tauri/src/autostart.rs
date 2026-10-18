@@ -77,8 +77,10 @@ pub fn zet(aan: bool) -> Result<(), String> {
 
 /// Wie het programma verplaatst (een nieuwe AppImage ergens anders) laat een
 /// autostart achter die nergens heen wijst. Bij elke start dus even bijwerken.
+/// Niet vanuit een debug-build: die laadt de schil van de Vite-server van
+/// `tauri dev`, en na het inloggen draait die niet.
 pub fn werk_bij() {
-    if staat_aan() {
+    if !cfg!(debug_assertions) && staat_aan() {
         let _ = zet(true);
     }
 }
