@@ -1,6 +1,6 @@
 [package]
 name = "cachymix"
-version = "0.1.2"
+version = "0.1.3"
 description = "Mixer voor de RME Fireface 400 onder Linux"
 license = "GPL-3.0-or-later"
 repository = "https://github.com/BadgerSoft-NL/cachymix-rme-ff-400"
