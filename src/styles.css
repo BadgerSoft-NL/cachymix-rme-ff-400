@@ -111,10 +111,6 @@ button {
   color: var(--zacht);
 }
 
-.waarschuwing {
-  color: var(--mute);
-}
-
 .balk-rechts {
   margin-left: auto;
   display: flex;

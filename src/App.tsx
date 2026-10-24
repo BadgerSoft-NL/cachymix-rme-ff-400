@@ -142,7 +142,7 @@ export default function App() {
     <div className="app">
       <header className="balk">
         <div className="merk">
-          CachyMix <span className="merk-versie">{version}</span> <span className="merk-sub">Fireface 400</span>
+          CachyMix <span className="merk-versie">{version}</span> <span className="merk-sub">for RME Fireface 400</span>
         </div>
         <div className={"verbinding" + (verbinding.verbonden ? " aan" : "")}>
           <span className="punt" />
@@ -151,9 +151,6 @@ export default function App() {
         {s && verbinding.verbonden && (
           <div className="klokinfo">
             {(s.samplerate / 1000).toFixed(1)} kHz · {KLOKNAAM[s.actieve_klok]}
-            {s.actieve_klok !== s.ingestelde_klok && (
-              <span className="waarschuwing"> (set to {KLOKNAAM[s.ingestelde_klok]}, not locked)</span>
-            )}
           </div>
         )}
         <div className="balk-rechts">
